@@ -1,0 +1,24 @@
+[submodule "drivers/python-driver"]
+	path = drivers/python-driver
+	url = https://github.com/bblfsh/python-driver
+[submodule "drivers/javascript-driver"]
+	path = drivers/javascript-driver
+	url = https://github.com/bblfsh/javascript-driver
+[submodule "drivers/typescript-driver"]
+	path = drivers/typescript-driver
+	url = https://github.com/bblfsh/typescript-driver
+[submodule "drivers/ruby-driver"]
+	path = drivers/ruby-driver
+	url = https://github.com/bblfsh/ruby-driver
+[submodule "drivers/php-driver"]
+	path = drivers/php-driver
+	url = https://github.com/bblfsh/php-driver
+[submodule "drivers/bash-driver"]
+	path = drivers/bash-driver
+	url = https://github.com/bblfsh/bash-driver
+[submodule "drivers/java-driver"]
+	path = drivers/java-driver
+	url = https://github.com/bblfsh/java-driver
+[submodule "drivers/go-driver"]
+	path = drivers/go-driver
+	url = https://github.com/bblfsh/go-driver

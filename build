@@ -1,0 +1,84 @@
+#!/bin/bash
+
+rm -rf ./temp
+mkdir ./temp
+
+# --- bash ---
+
+cd ./drivers/bash-driver
+bblfsh-sdk build jjhenkel/bash-driver
+docker run -it --name bash-driver --entrypoint echo jjhenkel/bash-driver 
+
+cd ../..
+docker cp bash-driver:/opt/driver/. ./temp/bash/
+docker rm bash-driver
+
+# --- go ---
+
+cd ./drivers/go-driver
+bblfsh-sdk build jjhenkel/go-driver
+docker run -it --name go-driver --entrypoint echo jjhenkel/go-driver 
+
+cd ../..
+docker cp go-driver:/opt/driver/. ./temp/go/
+docker rm go-driver
+
+# --- java ---
+
+cd ./drivers/java-driver
+bblfsh-sdk build jjhenkel/java-driver
+docker run -it --name java-driver --entrypoint echo jjhenkel/java-driver 
+
+cd ../..
+docker cp java-driver:/opt/driver/. ./temp/java/
+docker rm java-driver
+
+# --- javascript ---
+
+cd ./drivers/javascript-driver
+bblfsh-sdk build jjhenkel/javascript-driver
+docker run -it --name javascript-driver --entrypoint echo jjhenkel/javascript-driver 
+
+cd ../..
+docker cp javascript-driver:/opt/driver/. ./temp/javascript/
+docker rm javascript-driver
+
+# --- php ---
+
+cd ./drivers/php-driver
+bblfsh-sdk build jjhenkel/php-driver
+docker run -it --name php-driver --entrypoint echo jjhenkel/php-driver 
+
+cd ../..
+docker cp php-driver:/opt/driver/. ./temp/php/
+docker rm php-driver
+
+# --- python ---
+
+cd ./drivers/python-driver
+bblfsh-sdk build jjhenkel/python-driver
+docker run -it --name python-driver --entrypoint echo jjhenkel/python-driver 
+
+cd ../..
+docker cp python-driver:/opt/driver/. ./temp/python/
+docker rm python-driver
+
+# --- ruby ---
+
+cd ./drivers/ruby-driver
+bblfsh-sdk build jjhenkel/ruby-driver
+docker run -it --name ruby-driver --entrypoint echo jjhenkel/ruby-driver 
+
+cd ../..
+docker cp ruby-driver:/opt/driver/. ./temp/ruby/
+docker rm ruby-driver
+
+# --- typescript ---
+
+cd ./drivers/typescript-driver
+bblfsh-sdk build jjhenkel/typescript-driver
+docker run -it --name typescript-driver --entrypoint echo jjhenkel/typescript-driver 
+
+cd ../..
+docker cp typescript-driver:/opt/driver/. ./temp/typescript/
+docker rm typescript-driver
