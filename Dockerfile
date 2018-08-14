@@ -502,6 +502,7 @@ COPY docker-build-deps/enry /usr/local/bin/
 
 RUN apk add --no-cache \
         libxml2-dev \
+        libxml2 \
 				git \
     && apk add --no-cache --virtual .build-deps \
         binutils-gold \
@@ -514,3 +515,7 @@ RUN apk add --no-cache \
         python-dev \
 		&& pip install bblfsh \
 		&& apk del .build-deps
+
+COPY entrypoint.sh glue.py /app/
+
+ENTRYPOINT [ "/app/entrypoint.sh" ]
