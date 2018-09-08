@@ -57,6 +57,8 @@ for supported_lang in PARSER_MAP.keys():
         PARSER_MAP[supported_lang][0],
         "-l",
         PARSER_MAP[supported_lang][1],
+        '-m',
+        'native',
         "--v2",
         './{}'.format(src_file)
       ]

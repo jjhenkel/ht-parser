@@ -582,8 +582,8 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
 RUN apk add \
     	--no-cache \
-		--virtual \
-		.build-deps \
+			--virtual \
+			.build-deps \
 			gcc g++ libc-dev \
 		; \
 	go get -u gopkg.in/bblfsh/client-go.v2/... ; \
