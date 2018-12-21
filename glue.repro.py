@@ -11,22 +11,22 @@ from subprocess import PIPE, Popen
 
 # PARSER_MAP : maps from lang to parsers
 PARSER_MAP = {
-  'Shell': (
-    'localhost:9432', 'bash'),
-  'Go': (
-    'localhost:9433', 'go'),
-  'Java': (
-    'localhost:9434', 'java'),
-  'JavaScript': (
-    'localhost:9435', 'javascript'),
-  'PHP': (
-    'localhost:9436', 'php'),
-  'Python': (
-    'localhost:9437', 'python'),
-  'Ruby': (
-    'localhost:9438', 'ruby'),
-  'TypeScript': (
-    'localhost:9439', 'typescript'),
+#   'Shell': (
+#     'localhost:9432', 'bash'),
+#   'Go': (
+#     'localhost:9433', 'go'),
+#   'Java': (
+#     'localhost:9434', 'java'),
+#   'JavaScript': (
+#     'localhost:9435', 'javascript'),
+#   'PHP': (
+#     'localhost:9436', 'php'),
+#   'Python': (
+#     'localhost:9437', 'python'),
+#   'Ruby': (
+#     'localhost:9438', 'ruby'),
+#   'TypeScript': (
+#     'localhost:9439', 'typescript'),
   'C': (
     'localhost:9440', 'c'),
   'C++': (

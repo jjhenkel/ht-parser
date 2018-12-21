@@ -5,24 +5,72 @@
 # export GRPC_GO_LOG_SEVERITY_LEVEL=info
 # export GRPC_GO_LOG_VERBOSITY_LEVEL=2
 
+mkdir -p /opt/driver/etc
+mkdir -p /opt/driver/bin
+
 # Start drivers
 echo "[ht-parser][${1}] Starting drivers as background processes..."
-/opt/drivers/bash/bin/driver --address localhost:9432 --log-level debug & 
-echo "[ht-parser][${1}][1/8] Bash driver listening on unix:///tmp/bash"
-/opt/drivers/go/bin/driver --address localhost:9433 --log-level debug & 
-echo "[ht-parser][${1}][2/8] Go driver listening on unix:///tmp/go"
-/opt/drivers/java/bin/driver --address localhost:9434 --log-level debug & 
-echo "[ht-parser][${1}][3/8] Java driver listening on unix:///tmp/java"
-/opt/drivers/javascript/bin/driver --address localhost:9435 --log-level debug & 
-echo "[ht-parser][${1}][4/8] Javascript driver listening on unix:///tmp/javascript"
-/opt/drivers/php/bin/driver --address localhost:9436 --log-level debug & 
-echo "[ht-parser][${1}][5/8] Php driver listening on unix:///tmp/php"
-/opt/drivers/python/bin/driver --address localhost:9437 --log-level debug & 
-echo "[ht-parser][${1}][6/8] Python driver listening on unix:///tmp/python"
-/opt/drivers/ruby/bin/driver --address localhost:9438 --log-level debug & 
-echo "[ht-parser][${1}][7/8] Ruby driver listening on unix:///tmp/ruby"
-/opt/drivers/typescript/bin/driver --address localhost:9439 --log-level debug & 
-echo "[ht-parser][${1}][8/8] Typescript driver listening on unix:///tmp/typescript"
+
+ln -sf /opt/drivers/bash/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/bash/bin/commons-lang3-3.8.1.jar /opt/driver/bin/commons-lang3-3.8.1.jar
+ln -sf /opt/drivers/bash/bin/native-jar-with-dependencies.jar /opt/driver/bin/native-jar-with-dependencies.jar
+ln -sf /opt/drivers/bash/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/bash/bin/driver --address localhost:9432 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][1/9] Bash driver listening on localhost:9432"
+
+ln -sf /opt/drivers/go/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/go/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/go/bin/driver --address localhost:9433 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][2/9] Go driver listening on localhost:9433"
+
+ln -sf /opt/drivers/java/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/java/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/java/bin/driver --address localhost:9434 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][3/9] Java driver listening on localhost:9434"
+
+ln -sf /opt/drivers/javascript/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/javascript/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/javascript/bin/driver --address localhost:9435 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][4/9] Javascript driver listening on localhost:9435"
+
+ln -sf /opt/drivers/php/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/php/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/php/bin/driver --address localhost:9436 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][5/9] Php driver listening on localhost:9436"
+
+ln -sf /opt/drivers/python/bin/.local /opt/driver/bin/.local
+ln -sf /opt/drivers/python/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/python/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/python/bin/driver --address localhost:9437 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][6/9] Python driver listening on localhost:9437"
+
+ln -sf /opt/drivers/ruby/bin/lib /opt/driver/bin/lib
+ln -sf /opt/drivers/ruby/bin/gems /opt/driver/bin/gems
+ln -sf /opt/drivers/ruby/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/ruby/bin/native.rb /opt/driver/bin/native.rb
+ln -sf /opt/drivers/ruby/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/ruby/bin/driver --address localhost:9438 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][7/9] Ruby driver listening on localhost:9438"
+
+ln -sf /opt/drivers/typescript/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/typescript/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/typescript/bin/driver --address localhost:9439 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][8/9] Typescript driver listening on localhost:9439"
+
+ln -sf /opt/drivers/cpp/bin/native /opt/driver/bin/native
+ln -sf /opt/drivers/cpp/etc/manifest.toml /opt/driver/etc/manifest.toml
+/opt/drivers/cpp/bin/driver --address localhost:9440 --log-level debug &
+sleep 5
+echo "[ht-parser][${1}][9/9] C/C++ driver listening on localhost:9440"
+
 echo "[ht-parser][${1}] Drivers readied."
 
 # Shallow clone

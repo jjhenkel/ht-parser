@@ -82,3 +82,13 @@ docker run -it --name typescript-driver --entrypoint echo jjhenkel/typescript-dr
 cd ../..
 docker cp typescript-driver:/opt/driver/. ./temp/typescript/
 docker rm typescript-driver
+
+# --- C/C++ ---
+
+cd ./drivers/cpp-driver
+bblfsh-sdk build jjhenkel/cpp-driver
+docker run -it --name cpp-driver --entrypoint echo jjhenkel/cpp-driver 
+
+cd ../..
+docker cp cpp-driver:/opt/driver/. ./temp/cpp/
+docker rm cpp-driver

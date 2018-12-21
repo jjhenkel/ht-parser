@@ -559,6 +559,6 @@ RUN apk add \
 COPY temp/ /opt/drivers/
 COPY docker-build-deps/enry /usr/local/bin/
 
-COPY entrypoint.sh glue.py /app/
+COPY entrypoint.repro.sh glue.repro.py /app/
 
-ENTRYPOINT [ "/app/entrypoint.sh" ]
+ENTRYPOINT [ "/app/entrypoint.repro.sh" ]

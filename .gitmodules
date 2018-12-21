@@ -22,3 +22,6 @@
 [submodule "drivers/go-driver"]
 	path = drivers/go-driver
 	url = https://github.com/bblfsh/go-driver
+[submodule "drivers/cpp-driver"]
+	path = drivers/cpp-driver
+	url = https://github.com/bblfsh/cpp-driver.git
